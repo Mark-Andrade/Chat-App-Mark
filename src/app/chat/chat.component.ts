@@ -11,18 +11,11 @@ import { CometChat } from '@cometchat-pro/chat';
 export class ChatComponent implements OnInit {
   theme: string = '';
 
-  constructor(private auth: AngularFireAuth, private route: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
     CometChat.getLoggedinUser()
       .then((user: any) => this.theme = `background-color: ${user.metadata.theme};`)
       .catch((error) => console.log('error getting details:', { error }));
-  }
-
-  public logOut(): void {
-    this.auth
-      .signOut()
-      .then(() => this.route.navigate(['login']))
-      .catch((error) => console.log(error.message));
   }
 }

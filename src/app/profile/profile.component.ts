@@ -45,7 +45,8 @@ export class ProfileComponent implements OnInit {
 
     var user = new CometChat.User(uid);
     if (!avatar.includes('base64')) user.setAvatar(avatar);
-    user.setMetadata({avatar, theme});
+    let data:any={avatar: avatar, theme: theme}
+    user.setMetadata(data);
 
     CometChat.updateUser(user, authKey)
     .then(() => this.route.navigate(['']))

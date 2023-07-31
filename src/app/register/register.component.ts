@@ -43,7 +43,8 @@ export class RegisterComponent {
     const user = new CometChat.User(data.uid);
 
     user.setName(data.displayName);
-    user.setMetadata({avatar: data.avatar, theme: 'ghostwhite'});
+    data={avatar: data.avatar, theme: 'ghostwhite'}
+    user.setMetadata(data);
 
     CometChat.createUser(user, authKey)
       .then(() => this.route.navigate(['login']))
