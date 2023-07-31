@@ -11,7 +11,7 @@ This example shows How To Build One-on-One chat in your Angular app:
 ## Technology
 This demo uses:
 
-* CometChat Pro 2.2.1
+* CometChat Pro 3.0.11
 * CometChat Angular UI Kit
 * Firebase
 * Angular
